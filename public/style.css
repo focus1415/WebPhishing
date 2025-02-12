@@ -1,0 +1,151 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    background-image: url('logo.jpg'); 
+    background-repeat: no-repeat; 
+    background-position: top center; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.highlight {
+    color: red; 
+}
+.container {
+    text-align: center; 
+    margin-top: 140px; 
+}
+
+h1 {
+    font-size: 20px; 
+    color: #333; 
+    margin: 0;
+}
+
+.login-container {
+    background-color: #9a0000;
+    color: white;
+    padding: 20px; 
+    width: 400px; 
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px; 
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+    font-size: 12px;
+    text-align: center
+}
+
+.inner-rectangle {
+    background-color: white; 
+    width: 80%; 
+    height: 60%; 
+    position: absolute; 
+    top: 68%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 0;
+}
+
+.head {
+    font-size: 10px;
+    color: #333;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-weight: bold;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(249, 255, 196);
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: rgb(4, 4, 131);
+    display: inline-block; 
+    width: 50%; 
+    margin-left: 20; 
+    margin-bottom: 0; 
+    text-align: left;
+}
+
+input {
+    width: 100%; 
+    max-width: 200px; 
+    padding: 2px; 
+    font-size: 14px;
+    border: 2px solid rgb(151, 151, 151);
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+input:first-of-type {
+    margin-top: 10px; 
+}
+
+input:not(:first-of-type) {
+    margin-top: 0; 
+}
+
+button {
+    padding: 5px 10px; 
+    font-size: 12px; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px; 
+    cursor: pointer;
+    position: absolute; 
+    bottom: 5px; 
+    left: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.after {
+    text-align: center; 
+    margin-top: 160px; 
+}
+
+.after h3 {
+    font-size: 20px; 
+    color: #333; 
+    margin: 0;
+}
+
+.after p {
+    font-size: 12px; 
+    line-height: 1.5; 
+    color: #6a0b0b; 
+    margin-bottom: 20px; 
+}

